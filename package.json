@@ -1,10 +1,11 @@
 {
   "name": "playora",
   "version": "1.0.0",
+  "homepage": "https://github.com/IngaPirogova/playora-git",
   "scripts": {
     "start": "parcel src/index.html src/library.html",
     "dev": "parcel src/index.html src/library.html",
-    "build": "parcel build src/*.html"
+    "build": "parcel build src/*.html --public-url /playora-git/"
   },
   "keywords": [],
   "author": "Inga Pirogova <7007507@ukr.net>",
