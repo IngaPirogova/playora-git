@@ -22,6 +22,13 @@ export function setupModal() {
         const card = e.target.closest('.card');
 
         if (card) {
+
+            if (e.target.closest('.fav-btn')) {
+                e.stopPropagation();
+                return;
+            }
+
+
             const id = card.dataset.id;
 
             modal.classList.add('open');

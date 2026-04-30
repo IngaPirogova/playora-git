@@ -11,7 +11,8 @@ export function toggleFavorite(game) {
             id: game.id,
             name: game.name,
             background_image: game.background_image,
-            rating: game.rating
+            rating: game.rating,
+            website: game.website || null
         });
 
         // если добавили в favorites — убираем из played
