@@ -1,21 +1,20 @@
 export function toggleFavorite(game) {
-
-   
     let fav = JSON.parse(localStorage.getItem('favorites')) || [];
     let played = JSON.parse(localStorage.getItem('played')) || [];
 
     const exists = fav.some(item => item.id === game.id);
 
-    console.log('SAVING FAVORITES:', fav);
-    
     if (exists) {
-        // удалить из favorites
         fav = fav.filter(item => item.id !== game.id);
     } else {
-        // добавить в favorites
-        fav.push(game);
+        fav.push({
+            id: game.id,
+            name: game.name,
+            background_image: game.background_image,
+            rating: game.rating
+        });
 
-        // ❗ удалить из played
+        // если добавили в favorites — убираем из played
         played = played.filter(item => item.id !== game.id);
     }
 
@@ -24,7 +23,6 @@ export function toggleFavorite(game) {
 }
 
 export function isFavorite(id) {
-    const data = JSON.parse(localStorage.getItem('favorites')) || [];
-    return data.some(item => item.id === id);
+    const fav = JSON.parse(localStorage.getItem('favorites')) || [];
+    return fav.some(item => item.id === id);
 }
-

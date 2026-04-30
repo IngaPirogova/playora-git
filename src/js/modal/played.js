@@ -5,13 +5,15 @@ export function togglePlayed(game) {
     const exists = played.some(item => item.id === game.id);
 
     if (exists) {
-        // удалить из played
         played = played.filter(item => item.id !== game.id);
     } else {
-        // добавить в played
-        played.push(game);
+        played.push({
+            id: game.id,
+            name: game.name,
+            background_image: game.background_image,
+            rating: game.rating
+        });
 
-        // ❗ удалить из favorites
         fav = fav.filter(item => item.id !== game.id);
     }
 

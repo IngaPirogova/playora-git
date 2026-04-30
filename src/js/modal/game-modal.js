@@ -10,32 +10,28 @@ const api = new GamesApi();
 const modal = document.querySelector('#modal');
 const modalContent = document.querySelector('#modal-content');
 
-let currentGame = null; // 🔥 важная переменная состояния
+let currentGame = null;
 
 export function setupModal() {
 
     document.addEventListener('click', async (e) => {
 
         // =========================
-        // 1. КЛИК ПО КАРТОЧКЕ
+        // OPEN MODAL
         // =========================
         const card = e.target.closest('.card');
 
         if (card) {
             const id = card.dataset.id;
 
-            // открыть модалку
             modal.classList.add('open');
             document.body.style.overflow = 'hidden';
 
-            // modalContent.innerHTML = 'Loading...';
             showLoader();
+
             try {
-
-                // загрузка 1 игры
                 const game = await api.fetchById(id);
-
-                currentGame = game; // сохраняем текущую игру
+                currentGame = game;
 
                 const storeUrl = game.stores?.[0]?.store?.domain;
                 const website = game.website;
@@ -46,121 +42,96 @@ export function setupModal() {
                         ? `https://${storeUrl}`
                         : null;
 
-                //текст при открытии модалки делаем динамически
-                const isFav = isFavorite(game.id);
-                const isPlayedGame = isPlayed(game.id);
+                const favState = await isFavorite(game.id);
+                const playedState = await isPlayed(game.id);
 
-                // рендер
                 modalContent.innerHTML = `
 <button class="modal-close">✖</button>
 
 <h2>${game.name}</h2>
 <img src="${game.background_image}" width="300" />
 <p>${game.description_raw?.slice(0, 200)}...</p>
+
 <div class="modal-actions">
 
 ${playLink
-? `<a href="${playLink}" target="_blank" class="btn btn-play">
+                        ? `<a href="${playLink}" target="_blank" class="btn btn-play">
 ▶ Play
 </a>`
-: `<button class="btn btn-disabled">Not available</button>`
-}
+                        : `<button class="btn btn-disabled">Not available</button>`
+                    }
 
- <button id="add-fav" class="btn btn-fav">
-        ${isFav ? '💔 Remove from favorites' : '❤ Add to favorites'}
+<button id="add-fav" class="btn btn-fav">
+    ${favState ? '💔 Remove from favorites' : '❤ Add to favorites'}
 </button>
 
-<button id="add-played"  class="btn btn-played">
-        ${isPlayedGame ? '✔ Remove from played' : '✅ Mark as played'}
+<button id="add-played" class="btn btn-played">
+    ${playedState ? '✔ Remove from played' : '✅ Mark as played'}
 </button>
+
 </div>
 `;
             } catch (err) {
+                console.error(err);
                 modalContent.innerHTML = `<p>Failed to load game 😢</p>`;
             } finally {
                 hideLoader();
-            
-}
-//<button id="add-fav">❤ Add to favorites</button>
-//<button id="add-played">✔ Mark as played</button>
-            
-            
-            return; // 🔥 важно: дальше не идем
+            }
+
+            return;
         }
 
         // =========================
-        // 2. ДОБАВИТЬ В ИЗБРАННОЕ
+        // FAVORITES TOGGLE
         // =========================
-        // if (e.target.id === 'add-fav') {
-        //     console.log('favorites click');
-
-        //     toggleFavorite(currentGame)
-        // }
-
         if (e.target.id === 'add-fav') {
-            toggleFavorite(currentGame);
+            if (!currentGame) return;
 
-            const isFav = isFavorite(currentGame.id);
+            await toggleFavorite(currentGame);
 
-            e.target.textContent = isFav
+            const newState = await isFavorite(currentGame.id);
+
+            e.target.textContent = newState
                 ? '💔 Remove from favorites'
                 : '❤ Add to favorites';
         }
 
         // =========================
-        // 3. ДОБАВИТЬ В PLAYED
+        // PLAYED TOGGLE
         // =========================
-        // if (e.target.id === 'add-played') {
-        //     console.log('played click');
-
-        //     togglePlayed(currentGame)
-        // }
-
         if (e.target.id === 'add-played') {
-            togglePlayed(currentGame);
+            if (!currentGame) return;
+            console.log('CURRENT GAME:', currentGame);
+            await togglePlayed(currentGame);
 
-            const isPlayedGame = isPlayed(currentGame.id);
+            const newState = await isPlayed(currentGame.id);
 
-            e.target.textContent = isPlayedGame
+            e.target.textContent = newState
                 ? '✔ Remove from played'
                 : '✅ Mark as played';
         }
 
-        
         // =========================
-        // 4. ЗАКРЫТИЕ ПО КРЕСТИКУ
+        // CLOSE
         // =========================
         if (e.target.classList.contains('modal-close')) {
             closeModal();
         }
     });
 
-    // =========================
-    // 5. BACKDROP
-    // =========================
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
+        if (e.target === modal) closeModal();
     });
 
-    // =========================
-    // 6. ESC
-    // =========================
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
+        if (e.key === 'Escape') closeModal();
     });
 }
 
-// =========================
-// ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ
-// =========================
 function closeModal() {
     modal.classList.remove('open');
     document.body.style.overflow = '';
-
+    currentGame = null;
 }
 
 setupModal();
