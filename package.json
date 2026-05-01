@@ -5,8 +5,14 @@
   "scripts": {
     "start": "parcel src/index.html src/library.html",
     "dev": "parcel src/index.html src/library.html",
-    "build": "parcel build src/*.html --dist-dir docs --public-url /playora-git/"
+    "build": "parcel build src/*.html --public-url /playora-git/"
   },
+
+"repository": {
+    "type": "git",
+    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+  },
+
   "keywords": [],
   "author": "Inga Pirogova <7007507@ukr.net>",
   "license": "MIT",
