@@ -1,17 +1,21 @@
 export function showToast(message, type = 'success') {
     const toast = document.createElement('div');
 
-    toast.textContent = message;
-    toast.className = `toast toast--${type}`;
+    toast.innerText = message;
+
+    Object.assign(toast.style, {
+        position: 'fixed',
+        top: '20px',
+        right: '20px',
+        background: type === 'error' ? '#ef4444' : '#22c55e',
+        color: '#fff',
+        padding: '10px 15px',
+        zIndex: 99999,
+        borderRadius: '8px'
+    });
 
     document.body.appendChild(toast);
 
-    setTimeout(() => {
-        toast.classList.add('show');
-    }, 10);
-
-    setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
+    setTimeout(() => toast.remove(), 4000);
 }
+

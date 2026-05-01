@@ -1,7 +1,7 @@
 import { login, register, logout } from './auth.js';
 import { initUser } from './user.js';
 import { updateAuthUI } from './auth-ui.js';
-// import { showToast } from '../utils/toast.js';
+ import { showToast } from '../utils/toast.js';
 
 const form = document.querySelector('#auth-form');
 const modal = document.querySelector('#auth-modal');
@@ -39,12 +39,12 @@ export function initAuthController() {
         try {
             if (isLogin) {
                 await login(email, password);
-                alert('Logged in!');
-                // showToast('Logged in!', 'success');
+                // alert('Logged in!');
+                 showToast('Logged in!', 'success');
             } else {
                 await register(email, password);
-                alert('Registered! Check email');
-                // showToast('Registered! Check email', 'success');
+                // alert('Registered! Check email');
+                 showToast('Registered! Check email', 'success');
             }
     
             await initUser();   //  обновляем user state
@@ -53,8 +53,13 @@ export function initAuthController() {
             modal.classList.add('hidden');
     
         } catch (err) {
-            alert(err.message);
-            // showToast(err.message, 'error');
+            console.log('CATCH WORKS', err);
+            showToast(err.message, 'error');
+            //alert(err.message);            
+                // const errorMap = {
+                //     'Invalid login credentials': 'Неверный email или пароль',
+                // };
+                // showToast(errorMap[err.message] || 'Ошибка авторизации', 'error');            
         }
     });
     
