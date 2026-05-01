@@ -1,8 +1,10 @@
-🎮 Playora
+# 🎮 Playora
 
 Playora — адаптивное веб-приложение для поиска игр с использованием внешнего API и системой авторизации пользователей через Supabase. Пользователи могут искать игры, просматривать детали и сохранять их в личную библиотеку.
 
-🚀 Demo
+---
+
+## 🚀 Demo
 
 🔗 Live page:
 https://ingapirogova.github.io/playora-git/
@@ -10,10 +12,9 @@ https://ingapirogova.github.io/playora-git/
 💻 Source code:
 https://github.com/IngaPirogova/playora-git
 
+---
 
-
-
-✨ Features
+## ✨ Features
 
 🔍 Поиск игр через API
 📄 Просмотр информации об игре
@@ -23,9 +24,9 @@ https://github.com/IngaPirogova/playora-git
 📱 Адаптивная верстка
 🔄 Toggle-переключение в библиотеке (Favorites / Watched) без перезагрузки страницы
 
+---
 
-
-🧱 Project Structure
+## 🧱 Project Structure
 /src
   /js
     main.js          # логика главной страницы (поиск и отображение игр)
@@ -43,9 +44,9 @@ JavaScript (ES6+, модули)
 Supabase Auth
 REST API
 
+---
 
-
-🔐 Authentication
+## 🔐 Authentication
 
 Проект использует Supabase Auth для:
 
@@ -54,9 +55,9 @@ REST API
 
 📌 Избранные игры (favorites) сохраняются в localStorage на данном этапе без использования базы данных.
 
+---
 
-
-💡 Architecture Notes
+## 💡 Architecture Notes
 
 Проект реализован как Multi-Page Application (MPA):
 
@@ -65,18 +66,17 @@ REST API
 используется стандартная навигация между HTML-страницами
 реализовано переключение (Favorites / Watched) без перезагрузки страниицы библиотеки.
 
+---
 
-
-⚙️ Installation
+## ⚙️ Installation
 git clone https://github.com/IngaPirogova/playora-git
 cd playora-git
 
 Открой index.html через Live Server или браузер.
 
+---
 
-
-
-📌 Future Improvements
+## 📌 Future Improvements
 подключение базы данных для хранения favorites
 синхронизация данных между устройствами
 расширенные фильтры поиска
