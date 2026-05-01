@@ -3,7 +3,7 @@ import { toggleFavorite } from './favorites.js';
 import { togglePlayed } from './played.js';
 import { isFavorite } from './favorites.js';
 import { isPlayed } from './played.js';
-import { showLoader, hideLoader } from '../loader/loader.js';
+import { showLoader, hideLoader } from '../utils/loader.js';
 
 const api = new GamesApi();
 

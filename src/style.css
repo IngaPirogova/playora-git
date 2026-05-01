@@ -17,6 +17,10 @@ a {
     text-decoration: none;
 }
 
+link, button {
+    cursor: pointer;
+}
+
 .main-title {
     color: blueviolet;
 }
@@ -904,3 +908,19 @@ body.light .nav__btn:focus {
     transform: scale(1.2);
     filter: drop-shadow(0 0 6px #ff4d6d);
 } */
+
+.go-login {
+    display: inline-flex;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: #ff4d6d;
+    color: #f1f5f9;
+    transition: all 0.3 ease;
+
+}
+
+.go-login:hover {
+    box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+    background-color: #f82e53;
+    color: #020617;
+}

@@ -23,7 +23,7 @@ function checkAuth() {
         list.innerHTML = `
             <div class="empty">
                 <p>Please login to view your library 🔒</p>
-                <button id="go-login" class="btn">Login</button>
+                <a id="go-login" class="go-login" href="./index.html">Login</a>
             </div>
         `;
         return false;
