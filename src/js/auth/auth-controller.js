@@ -39,10 +39,10 @@ export function initAuthController() {
         try {
             if (isLogin) {
                 await login(email, password);
-                showToast('Logged in!');
+                showToast('Logged in!', 'success');
             } else {
                 await register(email, password);
-                showToast('Registered! Check email');
+                showToast('Registered! Check email', 'success');
             }
     
             await initUser();   //  обновляем user state
@@ -51,7 +51,7 @@ export function initAuthController() {
             modal.classList.add('hidden');
     
         } catch (err) {
-            showToast(err.message);
+            showToast(err.message, 'error');
         }
     });
     
