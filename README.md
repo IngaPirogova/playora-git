@@ -27,6 +27,7 @@ https://github.com/IngaPirogova/playora-git
 ---
 
 ## 🧱 Project Structure
+<pre>
 
 /src
   /js
@@ -39,6 +40,7 @@ https://github.com/IngaPirogova/playora-git
 index.html           # главная страница
 library.html         # страница библиотеки
 
+</pre>
 --- 
 
 ## 🛠 Tech Stack
@@ -76,6 +78,7 @@ library.html         # страница библиотеки
 ## ⚙️ Installation
 
 git clone https://github.com/IngaPirogova/playora-git
+
 cd playora-git
 
 Открой index.html через Live Server или браузер.
