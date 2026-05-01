@@ -1,5 +1,5 @@
-body.light .header {
-    background: #f9f8fc;
+body.light .header {     
+background:#78797e8a;     
 }
 
 body.light .header__wave {
@@ -8,7 +8,7 @@ body.light .header__wave {
 
 body.light .nav__btn {
     background: rgba(0, 0, 0, 0.05);
-    color: #0f172a;
+    color: #d9dee9;
 }
 
 body.light .search-input {
@@ -37,9 +37,6 @@ body.light {
     color: black;
 }
 
-body.light .header {
-    background: white;
-}
 
 body.light .search-input {
     background: #e2e8f0;
@@ -52,5 +49,5 @@ body.light .nav__link {
 }
 
 body.light .nav__link:hover {
-    color: #7b41e6;
+    color: #e2e8f0;
 }

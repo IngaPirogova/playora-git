@@ -6,7 +6,6 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #0f172a;
-  color: white;
   padding-top: 120px;
 }
 
@@ -29,6 +28,67 @@ button {
   padding: 0 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .header__inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    height: auto;
+    padding: 16px 0;
+    text-align: center;
+  }
+  .logo {
+    font-size: 28px;
+    text-align: center;
+  }
+  .search-form {
+    width: 100%;
+    max-width: 420px;
+  }
+  .search-input {
+    text-align: center;
+  }
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .nav__link {
+    font-size: 15px;
+  }
+  .nav__btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  #list {
+    margin-top: 220px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .search-input {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .nav {
+    flex-direction: column;
+  }
+  .nav__btn,
+  .nav__link {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 900px) {
+  .search-form {
+    max-width: 320px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .header__inner {
+    height: 120px;
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -45,7 +105,6 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  height: 120px;
 }
 
 .header__wave {
@@ -73,7 +132,7 @@ button {
   color: #e2e8f0;
   text-decoration: none;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   transition: 0.2s;
 }
 
@@ -516,7 +575,7 @@ button {
 }
 
 body.light .header {
-  background: #f9f8fc;
+  background: rgba(120, 121, 126, 0.5411764706);
 }
 
 body.light .header__wave {
@@ -525,7 +584,7 @@ body.light .header__wave {
 
 body.light .nav__btn {
   background: rgba(0, 0, 0, 0.05);
-  color: #0f172a;
+  color: #d9dee9;
 }
 
 body.light .search-input {
@@ -554,10 +613,6 @@ body.light {
   color: black;
 }
 
-body.light .header {
-  background: white;
-}
-
 body.light .search-input {
   background: #e2e8f0;
   color: black;
@@ -568,7 +623,7 @@ body.light .nav__link {
 }
 
 body.light .nav__link:hover {
-  color: #7b41e6;
+  color: #e2e8f0;
 }
 
 .fav-btn {
