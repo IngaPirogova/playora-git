@@ -1,0 +1,69 @@
+.auth-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+.auth-box {
+    background: #020617;
+    padding: 24px;
+    border-radius: 16px;
+
+    width: 100%;
+    max-width: 360px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-box input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.auth-submit {
+    padding: 10px;
+    background: #ff4d6d;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.auth-switch span {
+    color: #ff4d6d;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-email {
+    color: #ff4d6d;
+    font-weight: 600;
+}
+
+.go-login {
+    display: inline-flex;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: #ff4d6d;
+    color: #f1f5f9;
+    transition: all 0.3 ease;
+
+}
+
+.go-login:hover {
+    box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+    background-color: #f82e53;
+    color: #020617;
+}

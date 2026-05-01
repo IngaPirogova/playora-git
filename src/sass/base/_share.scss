@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -13,10 +13,18 @@ body {
 ul {
     list-style: none;
 }
+
 a {
     text-decoration: none;
 }
 
-link, button {
+a,
+button {
     cursor: pointer;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }

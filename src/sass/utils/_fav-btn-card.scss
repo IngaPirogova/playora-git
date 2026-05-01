@@ -1,0 +1,11 @@
+.fav-btn {
+    opacity: 0.4;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.fav-btn.active {
+    opacity: 1;
+    color: red;
+
+}

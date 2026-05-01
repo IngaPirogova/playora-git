@@ -1,0 +1,56 @@
+body.light .header {
+    background: #f9f8fc;
+}
+
+body.light .header__wave {
+    opacity: 0.3;
+}
+
+body.light .nav__btn {
+    background: rgba(0, 0, 0, 0.05);
+    color: #0f172a;
+}
+
+body.light .search-input {
+    background: rgba(255, 255, 255, 0.6);
+    color: #0f172a;
+}
+
+body.light .search-input {
+    background: rgba(229, 231, 236, 0.6);
+}
+
+body.light .search-input:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(231, 7, 63, 0.15);
+}
+
+body.light .nav__btn:hover,
+body.light .nav__btn:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(231, 7, 63, 0.15);
+    cursor: pointer;
+}
+
+body.light {
+    background: #f1f5f9;
+    color: black;
+}
+
+body.light .header {
+    background: white;
+}
+
+body.light .search-input {
+    background: #e2e8f0;
+    color: black;
+}
+
+body.light .nav__link {
+    color: #ff4d6d;
+
+}
+
+body.light .nav__link:hover {
+    color: #7b41e6;
+}

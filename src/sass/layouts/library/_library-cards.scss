@@ -1,0 +1,38 @@
+#library-list {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#library-list .card {
+    background: #020617;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+
+#library-list img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+
+#library-list h3 {
+    margin: 10px;
+    font-size: 14px;
+}
+
+
+#library-list .card:hover {
+    transform: translateY(-5px);
+}
+
+
+.empty {
+    text-align: center;
+    margin-top: 50px;
+    color: #94a3b8;
+}

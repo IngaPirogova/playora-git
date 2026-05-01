@@ -1,0 +1,35 @@
+.loader {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(2, 6, 23, 0.6);
+    backdrop-filter: blur(6px);
+
+    z-index: 9999;
+}
+
+.loader::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+
+    border: 5px solid #eee;
+    border-top: 5px solid #ff4d6d;
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

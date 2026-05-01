@@ -1,0 +1,39 @@
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav__link {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav__link:hover {
+    cursor: pointer;
+    color: #ff4d6d;
+}
+
+.nav__btn {
+    padding: 10px 16px;
+    font-size: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+    transition: 0.2s;
+}
+
+.nav__btn:hover,
+.nav__btn:focus {
+    background: rgba(255, 77, 109, 0.18);
+    border-color: #ff4d6d;
+}

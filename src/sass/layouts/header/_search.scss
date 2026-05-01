@@ -1,0 +1,31 @@
+.search-form {
+    width: 100%;
+    /* max-width: 440px; */
+    padding: 0 20px;
+
+}
+
+
+.search-input {
+
+    width: 100%;
+    padding: 14px 18px;
+
+    font-size: 16px;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    outline: none;
+    transition: 0.2s;
+}
+
+.search-input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
