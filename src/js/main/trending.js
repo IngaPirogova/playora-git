@@ -43,7 +43,7 @@ async function onPageClick(page) {
 setupSearch(api, loadTrending);
 
 async function initApp() {
-    await initUser();   // только логин
+    await initUser();   
     initAuthUI();
     initAuthController();
     updateAuthUI();
