@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang=en><script type=module src=/playora-git/library.a8f3ea45.js></script><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Playora</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&amp;display=swap" rel=stylesheet><link rel=stylesheet href=/playora-git/playora-git.b7e63972.css><link rel=stylesheet href=/playora-git/playora-git.8572ba00.map><body>
+    <header class=header>
+        <div class="container header__inner">
+    
+            <h1>
+                <a href=/playora-git/index.html class=logo>Playora</a>
+            </h1>
+    
+            <form class=search-form>
+                <input id=search-input placeholder="Search games..." class=search-input>
+            </form>          
+
+            <nav class=nav>
+                <a href=/playora-git/library.html class=nav__link>Library</a>
+                
+                 <button id=auth-btn class=nav__btn>Login</button>
+<span id=user-email class="hidden user-email"></span>
+<button id=logout-btn class="hidden nav__btn">Logout</button>
+                <button id=theme-toggle class=nav__btn>🌙</button>
+            </nav>    
+        </div>
+
+
+
+<div class=header__wave>
+    <svg preserveAspectRatio=none viewBox="0 0 1440 320"><defs><linearGradient id=waveGradient x1=0 x2=1 y1=0 y2=0><stop offset=0% stop-color=#0b1224 /><stop offset=40% stop-color=#1e3a8a /><stop offset=70% stop-color=#6d28d9 /><stop offset=100% stop-color=#ff4d6d /></linearGradient></defs><path fill=url(#waveGradient) d="M0 160c240 0 480-120 720-130 240 10 480 170 720 10v280H0Z"/></svg>
+</div>
+
+    </header>
+<div id=loader class="hidden loader"></div>
+
+    <ul id=list></ul>
+
+    <div id=pagination>
+        <button id=prev>⬅</button>
+        <span id=page-info></span>
+        <button id=next>➡</button>
+    </div>
+
+    <div class=modal id=modal>
+        <div id=modal-content></div>
+    </div>
+
+
+    <div id=auth-modal class="auth-modal hidden">
+        <div class=auth-box>
+    
+            <h2 id=auth-title>Login</h2>
+    
+            <form id=auth-form>
+                <input type=email id=auth-email placeholder=Email required>
+    
+                <input type=password id=auth-password placeholder=Password required>
+    
+                <button class=auth-submit>Login</button>
+            </form>
+    
+            <p class=auth-switch>
+                No account?
+                <span id=switch-mode>Register</span>
+            </p>
+    
+            <button id=auth-close>✖</button>
+    
+        </div>
+    </div>
+
+    <script type=module src=/playora-git/playora-git.b51b59fb.js></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
