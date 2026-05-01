@@ -9,9 +9,9 @@
   },
 
 "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
-  },
+  "type": "git",
+  "url": "git+https://github.com/IngaPirogova/playora-git.git"
+},
 
   "keywords": [],
   "author": "Inga Pirogova <7007507@ukr.net>",
